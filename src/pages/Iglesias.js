@@ -289,7 +289,7 @@ export default function Iglesias() {
   const distritoIdUsuario = usuario?.distritoId || null;
 
   const esAdmin = rol === 'ADMIN';
-  const esAP = rol === 'AP';
+  // const esAP = rol === 'AP'; // Unused variable
   const esPD = rol === 'PD';
   const esPastor = rol === 'PASTOR';
 
@@ -339,7 +339,7 @@ export default function Iglesias() {
       setIglesias([]);
     }
     setCargando(false);
-  }, [esPD, esPastor, pastorIdUsuario]);
+  }, [esPD, esPastor, pastorIdUsuario, distritoIdUsuario, usuario?.codigoPastor]);
 
   const cargarDistritos = useCallback(async () => {
     try {
